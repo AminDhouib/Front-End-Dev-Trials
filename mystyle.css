@@ -1,11 +1,13 @@
 body {
-	background-color: lightblue;
+	background-color: #66ccff;
 }
 
 h1 {
 	color: navy;
 	margin-left: 0px;
 	text-shadow: 1px 1px #000000;
+	font: 40px Times;
+	font-weight: bold;
 }
 
 h2 {
@@ -17,6 +19,11 @@ form {
 	color: navy;
 }
 
+footer {
+	font: 12px Times;
+	font-weight: bold;
+}
+
 .h2Custom {
 	color: black;
 	margin-left: 0px;
@@ -24,6 +31,9 @@ form {
 
 .kijijiImg{
 	border: 3px outset blue;
+	box-shadow: rgba(0, 0, 1, 1) 1px 3px 7px;
+	border-radius: 5px;
+
 }
 
 .myDiv1 {

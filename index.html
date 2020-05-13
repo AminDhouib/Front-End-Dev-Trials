@@ -2,14 +2,17 @@
 <html>
 
 	<head> 
-		<title>Hello World</title>
+		<title>Kijiji Questionaire</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">	</head>
 
 	<body>
-		<h1>Questionaire!</h1>
+		<h1>Kijiji Questionaire!</h1>
 		
 		<h2 class="h2Custom"> What do you think of the <a href="https://www.kijiji.ca/"> Kijiji</a> website?</h2>
-		<img class="kijijiImg" src="kijiji.PNG" alt="">
+		
+		<a href="https://www.kijiji.ca/">
+			<img class="kijijiImg" src="kijiji.PNG" alt="">
+		</a>
 
 		
 		<form action="index.php" name="myForm" method="POST">
@@ -57,7 +60,22 @@
 				
 				<br>
 				<br>
+				<br>
+				
+				How much do you like the website?<br>
+				<table>
+					 <tr>
+						 <td><label>I don't...<input id="loveStart" type="radio" name="love" value="1" /></label></td>
+						 <td><label><input type="radio" name="love" value="2" /></label></td>
+						 <td><label><input type="radio" name="love" value="3" /></label></td>
+						 <td><label><input type="radio" name="love" value="4" /></label></td>
+						 <td><label><input id="loveEnd" type="radio" name="love" value="5" />I love it</label></td>
+					 </tr>
+				</table>
 
+				<br>
+				<br>
+				
 			</div>
 			
 			<div class="myDiv3">
@@ -65,14 +83,18 @@
 			<h2>Almost Done...</h2>
 			
 				Additionary Comments (Optional):<br>
-				<textarea rows="5" cols"30"/> </textarea>
+				<textarea rows="5" cols="30"> </textarea>
 			
-			<div>
+			</div>
 			
 			<br>
 			
 			<button id ="submitButton" type="button" class="block">Submit!</button>
 			
 		</form>
+		
+		<footer>
+			<p>Website designed by: Amin Dhouib (3000025259)</p>
+		</footer>
 	</body>
 </html>
