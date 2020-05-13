@@ -1,0 +1,58 @@
+body {
+	background-color: lightblue;
+}
+
+h1 {
+	color: navy;
+	margin-left: 0px;
+	text-shadow: 1px 1px #000000;
+}
+
+h2 {
+	color: navy;
+	margin-left: 0px;
+}
+
+form {
+	color: navy;
+}
+
+.h2Custom {
+	color: black;
+	margin-left: 0px;
+}
+
+.kijijiImg{
+	border: 3px outset blue;
+}
+
+.myDiv1 {
+	border: 3px outset blue;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 1, 1) 1px 3px 5px;
+	background-color: lightblue;
+	margin-left: 0px;
+	max-width: 390px;
+	padding: 10px;
+}
+
+.myDiv2 {
+	border: 3px outset blue;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 1, 1) 1px 3px 5px;
+	background-color: lightblue;
+	margin-left: 0px;
+	max-width: 385px;
+	padding: 10px;
+}
+
+.myDiv3 {
+	border: 3px outset blue;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 1, 1) 1px 3px 5px;
+	background-color: lightblue;
+	margin-left: 0px;
+	max-width: 390px;
+	padding: 10px;
+}
+
