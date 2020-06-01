@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amin's Grocery Store</title>
+  
+  <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h1>Welcome To Amin's Grocery Store!</h1>
+  <!-- Tab links, each one with an onclick event associated with it -->
+  <div class="tab">
+    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="Client" class="tabcontent">
+    <h3>Client Information</h3>
+
+    <p>Want Organic Food Only?</p>
+
+    <input name="name" id="organicCheckBox" type=checkbox onchange="GetCheckBoxValue(this)">Yes</input>
+
+    <br>
+    <br>
+
+    <p>Choose a Category:</p>
+
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+      <option value=""></option>
+      <option value="None">None</option>
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="GlutenFree">Gluten Free</option>
+      <option value="Vegetarian&GlutenFree">Vegetarian & Gluten Free</option>
+    </select>
+  </div>
+
+  <div id="Products" class="tabcontent">
+    <h3>Your targeted products</h3>
+    <p>We preselected products based on your restrictions.</p>
+    Choose items to buy:
+    <div id="displayProduct"></div>
+
+    <br>
+    <br>
+
+    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+      Add selected items to cart.
+    </button>
+  </div>
+
+  <div id="Cart" class="tabcontent">
+    <h3>Cart</h3>
+    <p>Here is your cart.</p>
+    <div id="displayCart"></div>
+  </div>
+
+  <script src="scripts/groceries.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
+<footer>
+  <p>Website designed by: Amin Dhouib (3000025259)</p>
+</footer>
+
+</html>
