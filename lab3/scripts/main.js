@@ -2,6 +2,8 @@ var hasToBeOrganic = false;
 var currentProductList;
 var currentRestriction;
 var customerName;
+var currentCart = [];
+var currentTotalPrice = 0;
 
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
@@ -31,15 +33,14 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-    var s1 = document.getElementById(slct1);
+function populateListProductChoices(categoryRestriction, slct2) {
     var s2 = document.getElementById(slct2);
 
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 		
 	// filter list based on category
-	var productListWithCatergoryFilter = getProductBasedOnCategory(products, s1.value)
+	var productListWithCatergoryFilter = getProductBasedOnCategory(products, categoryRestriction)
 	
 	// obtain a reduced list of products based on restrictions
 	var optionArray = restrictListProducts(productListWithCatergoryFilter, currentRestriction, hasToBeOrganic);
@@ -53,60 +54,96 @@ function populateListProductChoices(slct1, slct2) {
 		
 	for (i = 0; i < optionArray.length; i++) {
 			
-		var productName = optionArray[i].name;
 		var productPrice = optionArray[i].price;
 
+		var productLabel = optionArray[i].name + " - " + productPrice + "$";
+		var photoLink = optionArray[i].photoLink;
+
 		// create the checkbox and add in HTML DOM
-		var checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
-		checkbox.name = "product";
-		checkbox.value = productName;
-		s2.appendChild(checkbox);
-		
+		var radiobox = document.createElement("input");
+		radiobox.type = "radio";
+		radiobox.name = "product";
+		radiobox.id = "product";
+		radiobox.value = optionArray[i].name;
+		s2.appendChild(radiobox);
+
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName + "   -   " + productPrice + "$"));
+		label.htmlFor = productLabel;
+		label.appendChild(document.createTextNode(productLabel));
 		s2.appendChild(label);
-		
+
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		s2.appendChild(document.createElement("br"));  
+
+		// put image
+		var img = document.createElement("img");
+		img.src = photoLink;
+		img.width = 150;
+		s2.appendChild(img);
+
+		// create a breakline node and add in HTML DOM
+		s2.appendChild(document.createElement("br"));
 	}
+
+	// add button to add to cart
+	var buttonToAddToCart = document.getElementById("addCart");
+	buttonToAddToCart.style.display = "block";
 }
 
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
 
-function selectedItems(){
+function selectedItem(){
 	
-	var ele = document.getElementsByName("product");
-	var chosenProducts = [];
-	
-	var c = document.getElementById('displayCart');
-	c.innerHTML = "";
-	
-	// build list of selected item
-	var para = document.createElement("P");
+	var chosenProduct;
+	var radios = document.getElementsByName('product');
 
-	if(customerName){
-		para.innerHTML = customerName +", you selected : ";
-	} else {
-		para.innerHTML = "You selected : ";
-	}
-
-	para.appendChild(document.createElement("br"));
-	for (i = 0; i < ele.length; i++) { 
-		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
-			para.appendChild(document.createElement("br"));
-			chosenProducts.push(ele[i].value);
+	for (var i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+			chosenProduct = radios[i].value;
+			break;
 		}
 	}
-		
+
+	currentCart.push(chosenProduct);
+	
+	var displayCart = document.getElementById('displayCart');
+	displayCart.innerHTML = "";
+	
+	// build list of selected item
+	var paragraph = document.createElement("P");
+
+	if(customerName){
+		paragraph.innerHTML = customerName +", you selected : ";
+	} else {
+		paragraph.innerHTML = "You selected : ";
+	}
+
+	paragraph.appendChild(document.createElement("br"));
+
+	alert("Product Added To Cart!");
+
+	var priceOfProduct = 0;
+	for (i = 0; i < currentCart.length; i++) { 
+
+		priceOfProduct = getPriceOfProduct(currentCart[i]);
+		paragraph.appendChild(document.createTextNode(currentCart[i] + " - " + priceOfProduct + "$"));
+		paragraph.appendChild(document.createElement("br"));
+	}
+
+	// Add new product to total price
+	currentTotalPrice = currentTotalPrice + priceOfProduct;
+	
+	// Make sure you do not have more than 2 decimals in the total price
+	currentTotalPrice = currentTotalPrice * 100;
+	Math.trunc(currentTotalPrice);
+	currentTotalPrice = currentTotalPrice / 100;
+	
 	// add paragraph and total price
-	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	displayCart.appendChild(paragraph);
+	displayCart.appendChild(document.createTextNode("Total Price is " + currentTotalPrice));
 		
 }
 
@@ -119,19 +156,15 @@ function GetCheckBoxValue(textboxEle) {
 		hasToBeOrganic = false;
 	}
 
-	populateListProductChoices('categorySelect', 'displayProduct');
+	populateListProductChoices("grains", 'displayProduct');
 }
 
-function changeDietarySelection(slct1){
-	var s1 = document.getElementById(slct1);
-
-	currentRestriction = s1.value;
-
-
+function changeDietarySelection(dietarySelection){
+	currentRestriction = dietarySelection;
 }
 
 function changeCustomerName(slct1){
 	var str = document.getElementById(slct1).value;
 	customerName = str;
-	
+	alert("Name registered as " + str);
 }

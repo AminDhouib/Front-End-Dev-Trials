@@ -9,7 +9,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 5.99,
-		category: "vegetables"
+		category: "vegetables",
+		photoLink: "ressources/brocolii.png"
 	},
 	{
 		name: "Bread (100g)",
@@ -17,7 +18,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		price: 2.35,
-		category: "grains"
+		category: "grains",
+		photoLink: "ressources/bread.png"
 	},
 	{
 		name: "Salmon (400g)",
@@ -25,7 +27,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 9.99,
-		category: "meats"
+		category: "meats",
+		photoLink: "ressources/salmon.png"
 	},
 	{
 		name: "Organic Apple (1 piece)",
@@ -33,7 +36,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 0.99,
-		category: "fruits"
+		category: "fruits",
+		photoLink: "ressources/organic_apple.png"
 	},
 	{
 		name: "Apple (1 piece)",
@@ -41,7 +45,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 0.79,
-		category: "fruits"
+		category: "fruits",
+		photoLink: "ressources/apple.png"
 	},
 	{
 		name: "Chicken (500g)",
@@ -49,7 +54,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 8.99,
-		category: "meats"
+		category: "meats",
+		photoLink: "ressources/chicken.png"
 	},
 	{
 		name: "Organic Chicken (500g)",
@@ -57,7 +63,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 18.99,
-		category: "meats"
+		category: "meats",
+		photoLink: "ressources/organic_chicken.png"
 	},
 	{
 		name: "Cheese (400g)",
@@ -65,7 +72,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 7.99,
-		category: "dairy"
+		category: "dairy",
+		photoLink: "ressources/cheese.png"
 	},
 	{
 		name: "Organic Brown Rice (1kg)",
@@ -73,7 +81,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 12.99,
-		category: "grains"
+		category: "grains",
+		photoLink: "ressources/organic_brown_rice.png"
 	},
 	{
 		name: "White Rice (1kg)",
@@ -81,7 +90,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		price: 9.99,
-		category: "grains"
+		category: "grains",
+		photoLink: "ressources/white_rice.png"
 	},
 	{
 		name: "Organic Oatmeal (500g)",
@@ -89,7 +99,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 5.99,
-		category: "grains"
+		category: "grains",
+		photoLink: "ressources/organic_oatmeal.png"
 	},
 	{
 		name: "Spaghetti (1kg)",
@@ -97,15 +108,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		price: 14.99,
-		category: "grains"
-	},
-	{
-		name: "Organic Chicken (1kg)",
-		vegetarian: false,
-		glutenFree: false,
-		organic: true,
-		price: 14.99,
-		category: "meats"
+		category: "grains",
+		photoLink: "ressources/spaghetti.png"
 	}
 	
 ];
@@ -196,6 +200,7 @@ function sortByPrice(productList){
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
+
 	totalPrice = 0;
 	for (let i=0; i<products.length; i+=1) {
 		if (chosenProducts.indexOf(products[i].name) > -1){
@@ -203,4 +208,17 @@ function getTotalPrice(chosenProducts) {
 		}
 	}
 	return totalPrice;
+}
+
+// Calculate the price an items
+function getPriceOfProduct(chosenProduct) {
+
+	priceOfProduct = 0;
+	for (let i=0; i<products.length; i+=1) {
+		if (chosenProduct.localeCompare(products[i].name) == 0){
+			priceOfProduct += products[i].price;
+			break;
+		}
+	}
+	return priceOfProduct;
 }

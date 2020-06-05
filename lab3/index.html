@@ -18,16 +18,19 @@
   
   <!-- Tab content -->
   <div id="Client" class="tabcontent">
-    <h3>Client Information</h3>
+    <h3>Your Information & Preferences</h3>
 
     <p>What is your name?</p>
     <input type="text" id="customerName"></input>
     <button class="customerNameButton" onclick="changeCustomerName('customerName')">Register Name</button>
 
-    <p>Do you have any dietary restrictions?</p>
+    <script type="module">
+      changeDietarySelection("None");
+    </script>
 
-    <select id="dietSelect" name="dietSelect" onchange="changeDietarySelection(this.id)">
-      <option value=""></option>
+    <p>Do you have any dietary preferences?</p>
+
+    <select id="dietSelect" name="dietSelect" onchange="changeDietarySelection(this.value)">
       <option value="None">None</option>
       <option value="Vegetarian">I am a vegetarian</option>
       <option value="GlutenFree">I can't eat gluten</option>
@@ -41,9 +44,9 @@
 
 
   <div id="Products" class="tabcontent">
-    <h3>Your targeted products</h3>
+    <h3>Product List Based On Your Dietary Preferences</h3>
 
-    <p>Display Organic Food Only?</p>
+    <p>Show Only Organic Food In Product List?</p>
 
     <input name="name" id="organicCheckBox" type=checkbox onchange="GetCheckBoxValue(this)">Yes</input>
 
@@ -51,26 +54,24 @@
     <br>
     
     <p>Select Type Of Food:</p>
-    <select id="categorySelect" name="categorySelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-      <option value=""></option>
-      <option value="grains">Grains</option>
-      <option value="vegetables">Vegetables</option>
-      <option value="meats">Meats</option>
-      <option value="dairy">Dairy</option>
-    </select>
+    <div class="tab">
+      <button id="categorySelect" value="grains" class="tablinks" onclick="populateListProductChoices(this.value, 'displayProduct')">Grains</button>
+      <button id="categorySelect" value="vegetables"class="tablinks" onclick="populateListProductChoices(this.value, 'displayProduct')">Vegetables</button>
+      <button id="categorySelect" value="meats" class="tablinks" onclick="populateListProductChoices(this.value, 'displayProduct')">Meats</button>
+      <button id="categorySelect" value="dairy" class="tablinks" onclick="populateListProductChoices(this.value, 'displayProduct')">Dairy</button>
+
+    </div>
 
     <br>
     <br>
-    <br>
 
-    Choose items to buy:
     <div id="displayProduct"></div>
 
     <br>
     <br>
 
-    <button id="addCart" type="button" class="block" onclick="selectedItems()">
-      Add selected items to cart.
+    <button id="addCart" type="button" class="block" style="display: none;" onclick="selectedItem()">
+      Add selected item to cart.
     </button>
 
     <br>
@@ -79,7 +80,7 @@
     <button class="backButton" onclick="location.href='index.html';">Go Back</button>
     <button class="nextButton" onclick="openInfo(event, 'Cart')">Go To Cart To Finalize Purchase</button>
 
-    <h5>Note: Going back will delete all reset all of what you have selected.</h5>
+    <h5>Note: Going back will reset all information you have given so far.</h5>
 
   </div>
 
@@ -90,6 +91,7 @@
     <div id="displayCart"></div>
 
     <button class="backButton" onclick="openInfo(event, 'Products')">Go Back</button>
+    <button class="nextButton" onclick="location.href='index.html';">Accept & Purchase</button>
 
   </div>
 
