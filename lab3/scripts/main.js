@@ -1,4 +1,7 @@
 var hasToBeOrganic = false;
+var currentProductList;
+var currentRestriction;
+var customerName;
 
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
@@ -31,13 +34,19 @@ function openInfo(evt, tabName) {
 function populateListProductChoices(slct1, slct2) {
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
-	
+
 	// s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
 		
+	// filter list based on category
+	var productListWithCatergoryFilter = getProductBasedOnCategory(products, s1.value)
+	
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value, hasToBeOrganic);
+	var optionArray = restrictListProducts(productListWithCatergoryFilter, currentRestriction, hasToBeOrganic);
 
+	// save list
+	currentProductList = optionArray;
+	
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
@@ -79,7 +88,13 @@ function selectedItems(){
 	
 	// build list of selected item
 	var para = document.createElement("P");
-	para.innerHTML = "You selected : ";
+
+	if(customerName){
+		para.innerHTML = customerName +", you selected : ";
+	} else {
+		para.innerHTML = "You selected : ";
+	}
+
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
@@ -104,6 +119,19 @@ function GetCheckBoxValue(textboxEle) {
 		hasToBeOrganic = false;
 	}
 
-	populateListProductChoices("dietSelect", 'displayProduct');
+	populateListProductChoices('categorySelect', 'displayProduct');
 }
 
+function changeDietarySelection(slct1){
+	var s1 = document.getElementById(slct1);
+
+	currentRestriction = s1.value;
+
+
+}
+
+function changeCustomerName(slct1){
+	var str = document.getElementById(slct1).value;
+	customerName = str;
+	
+}
