@@ -1,0 +1,63 @@
+
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* Taken from https://stackoverflow.com/questions/16349490/html-css-buttons-that-scroll-down-to-different-div-sections-on-a-webpage */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bootstrap default font-family is Helvetica Neue */
+h1 {
+  font-family: "Impact", "fantasy";
+  text-shadow: 3px 3px 1px black;
+}
+
+/* Taken from https://stackoverflow.com/questions/48735679/bootstrap-change-navbar-link-colors */
+.navbar-nav li a{
+  color: white !important;
+}
+
+/* Logo custom style */
+.logo {
+  display: inline;
+}
+
+.headerSection{
+  color: rgb(255, 255, 255);
+  font-family: "Impact", "Charcoal", "sans-serif";
+  text-align: center;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0); /* Taken from https://stackoverflow.com/questions/2570972/css-font-border*/
+}
+
+.headerSectionForParallax{
+  font-size: 70px;
+  color: rgb(255, 92, 16);
+  font-family: "Impact", "Charcoal", "sans-serif";
+  text-align: center;
+  -webkit-text-stroke: 3px rgb(0, 0, 0); /* Taken from https://stackoverflow.com/questions/2570972/css-font-border*/
+}
+
+.textIntro {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-family: "Georgia";
+  text-align: center;
+  text-shadow: 3px 3px 1px black;
+}
+
+.container{
+  margin-top: 15px;
+  background-color: rgb(255, 92, 16);
+}
+
+.parallax {
+  padding: 50px;
+  background-image: url("bikeRepair.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

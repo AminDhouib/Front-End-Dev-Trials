@@ -1,0 +1,78 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Cycle Masters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+    <!-- Navigation bar taken from my own passion project website I have made a long time ago: unotes.cf -->
+	<nav class="navbar navbar-expand-md navbar-light bg-dark text-white sticky-top">
+
+            <img class="card-img-top" src="images/bicycleLogo.png" alt="Card image" style="width:5%"><h1 class = "logo">Cycle Masters</h1>
+            
+			<!--Button to make it collapsable-->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!--The actual menu-->
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>			
+                    <li class="nav-item"><a class="nav-link" href="index.html">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Our Locations</a></li>
+				</ul>
+			</div>
+		</div>
+    </nav>        
+        
+        <div class="parallax">
+            <h2 class = "headerSectionForParallax">We Fix Bikes Since 1989!</h2>
+            <h3 class = "textIntro">Here at Cycle Masters we dedicate excellent bike repair services to all our Canadian customers.</h3>
+        </div>
+
+
+    <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
+    <!-- It can be useful for placement of information -->
+    <div class = "container">
+        <h2 class = "headerSection">Our Experts</h2>
+        <div class="row p-3">
+            <div class="col-sm-6">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <img class="card-img-top" src="images/jeremy.jpg" alt="Card image" style="width:50%">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <img class="card-img-top" src="images/jeremy.jpg" alt="Card image" style="width:50%">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
