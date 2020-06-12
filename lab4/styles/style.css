@@ -3,7 +3,7 @@
    color picker www.w3schools.com/colors/colors_picker.asp
 */
 
-/* Taken from https://stackoverflow.com/questions/16349490/html-css-buttons-that-scroll-down-to-different-div-sections-on-a-webpage */
+/* Taken from https://www.w3schools.com/howto/howto_css_parallax.asp */
 html {
   scroll-behavior: smooth;
 }
@@ -24,7 +24,7 @@ h1 {
   display: inline;
 }
 
-/*Parallax Scrolling Section */
+/* Taken from https://stackoverflow.com/questions/16349490/html-css-buttons-that-scroll-down-to-different-div-sections-on-a-webpage */
 .parallax {
   padding: 50px;
   background-image: url("bikeRepair.jpg");
@@ -122,4 +122,5 @@ h1 {
   color: rgb(255, 255, 255);
   vertical-align: top;
   text-align: center;
+  overflow-wrap: break-word;
 }
