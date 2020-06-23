@@ -1,0 +1,244 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Cycle Masters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+    <!-- Navigation bar taken from my own passion project website I have made a long time ago: unotes.cf -->
+	<nav class="navbar navbar-expand-md navbar-light bg-dark text-white sticky-top">
+
+            <img class="card-img-top" src="images/bicycleLogo.png" alt="Card image" style="width:5%"><h1 class = "logo">Cycle Masters</h1>
+            
+			<!--Button to make it collapsable-->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!--The actual menu-->
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html">Our Experts</a></li>			
+                    <li class="nav-item"><a class="nav-link" href="index.html">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Our Location & Contact Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Book An Appointement</a></li>
+				</ul>
+			</div>
+		</div>
+    </nav>        
+        
+        <div class="parallax">
+            <h2 class = "headerSectionForParallax">We Fix Bikes Since 1989!</h2>
+            <h3 class = "textIntro">Here at Cycle Masters we dedicate excellent bike repair services to all our Canadian customers.</h3>
+        </div>
+
+    <!-- Section about the COVID-19 warning  -->
+    <div class = "container">
+        <div class="row">
+            <div class="card bg-warning" style="width:1800px">
+                <div class="card-body">
+                    
+                    <img src="images/icons/alert.png" width="50" height="50">
+
+                    <h4 class="card-title">COVID-19: Last Update – June 8, 2020, 10:20 am</h4>
+                    <!-- collapsible part -->
+                    <a href="#profile" class="btn btn-success" data-toggle="collapse">View Update</a>
+                    <div id="profile" class="collapse p-3">
+                        <p>Our repair shops will only allow one person to come by at a time due to the COVID-19 spread. 
+                            Please take that into consideration when visiting one of our location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section introducing the experts -->
+    <div class = "container">
+        <h2 class = "headerSection">Our Experts <img src="images/icons/expertPerson.png" width="50" height="50"></h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- https://www.girlsaskguys.com/guys-behavior/a56731-nice-guys-what-people-get-wrong-about-them -->
+                    <img class="card-img-top" src="images/jeremy.jpg" alt="Card image" style="width:50%">
+                    <h3 class ="textSectionLarge">Jeremy Falcon</h3>
+                    <h3 class ="textSectionSmall">
+                        Jeremy has been in the biking repair service with us for more then 10 years. He has fixed 
+                        various problems and always gives our customers his biggest smile. 
+                    </h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- https://www.flickr.com/photos/robmoses/33846632674 -->
+                    <img class="card-img-top" src="images/colin.png" alt="Card image" style="width:50%">
+                    <h3 class ="textSectionLarge">Colin Sprouse</h3>
+                    <h3 class ="textSectionSmall">
+                        Colin has about 15 years of bike repairing experience. In his years of repairing, he has been 
+                        giving nothing but his all. If you need somebody to rely on, he is your man!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section introducing the services -->
+    <div class = "container">
+        <h2 class = "headerSection">Our Services <img src="images/icons/servicesIcon.png" width="50" height="50"> </h2>
+        <div class="row">
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- https://www.purecycles.com/blogs/bicycle-news/adjusting-disc-brake-pads -->
+                    <img class="card-img-top" src="images/service_brakes.png" alt="Card image" style="width:100%">
+                    <h3 class ="textSectionLargeService">Brake Repair</h3>
+                    <h3 class ="textSectionSmallService">
+                        Can't seem to break easily with your bike? We will give your bike a brake replacement on both sides!
+                    </h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- http://bernusports.lv/c6b1b0522f41338a6268668e2509380f-type-of-bicycle-tire-flats-940-gif-2/ -->
+                    <img class="card-img-top" src="images/service_badTire.png" alt="Card image" style="width:100%">
+                    <h3 class ="textSectionLargeService">Tire Repair</h3>
+                    <h3 class ="textSectionSmallService">
+                        Falt tires? No worries, we got you covered! We will be able to replace nay flatten tires you got!
+                    </h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- https://www.esciclismo.com/actualidad/material/44732.html -->
+                    <img class="card-img-top" src="images/service_bikeWash.png" alt="Card image" style="width:100%">
+                    <h3 class ="textSectionLargeService">Bike Wash</h3>
+                    <h3 class ="textSectionSmallService">
+                        The bike is a little dirty? We will give it a nice wash. All surface level of the bike will be cleaned!
+                    </h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <!-- https://www.bikeforums.net/classic-vintage/1049654-classic-bike-colors.html -->
+                    <img class="card-img-top" src="images/service_repaint.png" alt="Card image" style="width:100%">
+                    <h3 class ="textSectionLargeService">Bike Repaint</h3>
+                    <h3 class ="textSectionSmallService">
+                        Bike is looking a little old? No worries, we will professionally repaint the bike to any color you desire!
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section For Contact Info Of The Business -->
+    <div class = "container">
+        <h2 class = "headerSection">Our Location & Contact Info <img src="images/icons/informationIcon.png" width="50" height="50"> </h2>
+        <div class="row">
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <h3 class ="textSectionLargeInfo">Location</h3>
+                    <h3 class ="textSectionSmallInfo">
+                        2105 Weston Road
+                    </h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <h3 class ="textSectionLargeInfo">Email</h3>
+                    <h3 class ="textSectionSmallInfo">
+                        cycle_masters@outlook.com
+                    </h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container-md p-3 my-3 border bg-dark text-success">
+                    <h3 class ="textSectionLargeInfo">Phone Number</h3>
+                    <h3 class ="textSectionSmallInfo">
+                        (613) 543-8901
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section to book appointement -->
+    <div class="container">
+        <h2 class = "headerSection">Book An Appointement <img src="images/icons/booking.png" width="50" height="50"> </h2>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/icons/choose_service.png" width="30" height="30">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <input type="checkbox" id="serviceType" value="brakeRepair">Brake Repair - 20.99$ (Each Brake)</input> <br>
+                        <input type="checkbox" id="serviceType" value="tireRepair">Tire Repair - 39.99$ (Each Tire)</input> <br>
+                        <input type="checkbox" id="serviceType" value="bikeWash">Bike Wash - 13.99$ (Per Bike) </input> <br>
+                        <input type="checkbox" id="serviceType" value="bikeRepaint">Bike Repaint 29.99$ (Per Bike)</input> <br>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>What date?</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Your information so we can contact you</p>
+                        <p>
+                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
+                        </p>
+                        <p>
+                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success btn-block">Click Here To Submit Form For Appointement</button>
+
+    </div>
+    
+</body>
+</html>
