@@ -42,10 +42,10 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="index.html">Our Experts</a></li>			
-                    <li class="nav-item"><a class="nav-link" href="index.html">Our Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Our Location & Contact Info</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Book An Appointement</a></li>
+					<li class="nav-item"><a class="nav-link" href="#ourExperts">Our Experts</a></li>			
+                    <li class="nav-item"><a class="nav-link" href="#ourServices">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ourLocationContactInfo">Our Location & Contact Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bookAppointement">Book An Appointement</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
     </div>
 
     <!-- Section introducing the experts -->
-    <div class = "container">
+    <div class = "container" id="ourExperts">
         <h2 class = "headerSection">Our Experts <img src="images/icons/expertPerson.png" width="50" height="50"></h2>
         <div class="row">
             <div class="col-sm-6">
@@ -107,7 +107,7 @@
     </div>
 
     <!-- Section introducing the services -->
-    <div class = "container">
+    <div class = "container" id="ourServices">
         <h2 class = "headerSection">Our Services <img src="images/icons/servicesIcon.png" width="50" height="50"> </h2>
         <div class="row">
             <div class="col">
@@ -126,7 +126,7 @@
                     <img class="card-img-top" src="images/service_badTire.png" alt="Card image" style="width:100%">
                     <h3 class ="textSectionLargeService">Tire Repair</h3>
                     <h3 class ="textSectionSmallService">
-                        Falt tires? No worries, we got you covered! We will be able to replace nay flatten tires you got!
+                        Falt tires? No worries, we got you covered! We will be able to replace any flatten tires you got!
                     </h3>
                 </div>
             </div>
@@ -154,7 +154,7 @@
     </div>
 
     <!-- Section For Contact Info Of The Business -->
-    <div class = "container">
+    <div class = "container" id="ourLocationContactInfo">
         <h2 class = "headerSection">Our Location & Contact Info <img src="images/icons/informationIcon.png" width="50" height="50"> </h2>
         <div class="row">
             <div class="col">
@@ -185,7 +185,7 @@
     </div>
 
     <!-- Section to book appointement -->
-    <div class="container">
+    <div class="container" id="bookAppointement">
         <h2 class = "headerSection">Book An Appointement <img src="images/icons/booking.png" width="50" height="50"> </h2>
         <div id="accordion">
             <div class="card">
@@ -203,6 +203,7 @@
                 </div>
             <div class="card">
                 <div class="card-header">
+                    <img src="images/icons/choose_date.png" width="30" height="30">
                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
                 </div>
                 <div id="collapseDate" class="collapse" data-parent="#accordion">
@@ -221,9 +222,44 @@
             </div>
             <div class="card">
                 <div class="card-header">
+                    <img src="images/icons/choose_info.png" width="30" height="30">
                     <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
                 </div>
                 <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Your information so we can contact you</p>
+                        <p>
+                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
+                        </p>
+                        <p>
+                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/icons/choose_expert.png" width="30" height="30">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseExpert">Choose an expert</a>
+                </div>
+                <div id="collapseExpert" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Your information so we can contact you</p>
+                        <p>
+                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
+                        </p>
+                        <p>
+                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/icons/choose_payment.png" width="30" height="30">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapsePayment">Choose payment method</a>
+                </div>
+                <div id="collapsePayment" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <p>Your information so we can contact you</p>
                         <p>
