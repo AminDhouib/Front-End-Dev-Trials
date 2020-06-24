@@ -22,6 +22,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
 
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+     <!-- Your own script -->
+     <script src="scripts/service.js"></script>
+
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -195,10 +205,27 @@
                 </div>
                 <div id="collapseService" class="collapse show" data-parent="#accordion">
                     <div class="card-body">
-                        <input type="checkbox" id="serviceType" value="brakeRepair">Brake Repair - 20.99$ (Each Brake)</input> <br>
-                        <input type="checkbox" id="serviceType" value="tireRepair">Tire Repair - 39.99$ (Each Tire)</input> <br>
-                        <input type="checkbox" id="serviceType" value="bikeWash">Bike Wash - 13.99$ (Per Bike) </input> <br>
-                        <input type="checkbox" id="serviceType" value="bikeRepaint">Bike Repaint 29.99$ (Per Bike)</input> <br>
+                        <input type="radio" id="serviceType" name="serviceType" value="brakeRepair" checked="checked">Brake Repair - 20.99$ (Each Brake)</input> <br>
+                        <input type="radio" id="serviceType" name="serviceType" value="tireRepair">Tire Repair - 39.99$ (Each Tire)</input> <br>
+                        <input type="radio" id="serviceType" name="serviceType" value="bikeWash">Bike Wash - 13.99$ (Per Bike) </input> <br>
+                        <input type="radio" id="serviceType" name="serviceType" value="bikeRepaint">Bike Repaint 29.99$ (Per Bike)</input> <br>
+                    </div>
+                </div>
+            <div class="card">
+                    <div class="card-header">
+                        <img src="images/icons/choose_expert.png" width="30" height="30">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseExpert">Choose an expert</a>
+                    </div>
+                    <div id="collapseExpert" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Choose the expert that will take care of your vehicle! (Date will be reset if the expert is changed)</p>
+                            <p>
+                                <input type="radio" id="jeremySelected" name="expertSelected" checked="checked" onclick="changeExpert(this.id)">
+                                <label for="jeremySelected">Jeremy Falcon - Available Monday, Tuesday, Wednesday & Thrusday</label><br>
+                                <input type="radio" id="colinSelected" name="expertSelected" onclick="changeExpert(this.id)">
+                                <label for="colinSelected">Colin Sprouse - Available Tuesday, Friday & Saturday</label><br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             <div class="card">
@@ -209,14 +236,7 @@
                 <div id="collapseDate" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <p>What date?</p>
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                        <div class="form-group row">
-                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
-                            </div>
-                        </div>
+                        Date: <input readonly type="text" id="dateInput"></input>
                     </div>
                 </div>
             </div>
@@ -229,27 +249,10 @@
                     <div class="card-body">
                         <p>Your information so we can contact you</p>
                         <p>
-                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
+                            Enter your full name (Optional): <input type="text" class="personalInfo" id="customerName"><br> 
                         </p>
                         <p>
-                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="images/icons/choose_expert.png" width="30" height="30">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseExpert">Choose an expert</a>
-                </div>
-                <div id="collapseExpert" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        <p>Your information so we can contact you</p>
-                        <p>
-                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
-                        </p>
-                        <p>
-                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
+                            Phone Number <input type="text" id="phone" title="Input Format: (xxx) xxx-xxxx.">
                         </p>
                     </div>
                 </div>
@@ -261,20 +264,13 @@
                 </div>
                 <div id="collapsePayment" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <p>Your information so we can contact you</p>
+                        <p><b>Note: In case of no-show, 5$ will be charged. Make sure you are commited to the booking.</b></p>
                         <p>
-                            Enter your full name: <input type="text" class="personalInfo" id="customerName"><br> 
-                        </p>
-                        <p>
-                            Enter your email address: <input type="text" class="personalInfo" id="customerEmail"><br> 
+                            Credit Card: <input type="text" id="creditNumber" title="Input Format: xxxx xxxx xxxx xxxx.">
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-success btn-block">Click Here To Submit Form For Appointement</button>
-
+        <button type="button" onclick="boookedApproved()" class="btn btn-success btn-block">Click Here To Submit Form For Appointement</button>
     </div>
-    
-</body>
-</html>
