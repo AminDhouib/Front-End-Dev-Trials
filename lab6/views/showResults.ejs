@@ -1,0 +1,80 @@
+<html lang="en-US">
+
+<head>
+    <title>Survey Analysis</title>
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+
+    <!-- Use Css external file -->
+    <link href="../public/assets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="/niceSurvey">Kijiji Questionaire</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/niceSurvey">Survey</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/analysis">Analysis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Survey analysis</h1>
+        <br>
+        <br>
+        <h3>Name of participants</h3>
+        <ul>
+            <% for (var i=0; i<results[0].length; i++){ %>
+            <li><%= results[0][i].name %> </li>
+            <% } %>
+        </ul>
+        <h3>Genders</h3>
+        <ul>
+            <% for (var i=0; i<results[1].length; i++){ %>
+            <li><%= results[1][i].gender %> : <%= results[1][i].count %></li>
+            <% } %>
+        </ul>
+        <h3>Frequency of them visiting the site</h3>
+        <ul>
+            <% for (var i=0; i<results[2].length; i++){ %>
+            <li><%= results[2][i].goodTraits %> : <%= results[2][i].count %></li>
+            <% } %>
+        </ul>
+        <h3>People like</h3>
+        <ul>
+            <% for (var i=0; i<results[3].length; i++){ %>
+            <li><%= results[3][i].frequency %> : <%= results[3][i].count %></li>
+            <% } %>
+        </ul>
+        <h3>People also like</h3>
+        <ul>
+            <% for (var i=0; i<results[4].length; i++){ %>
+            <li><%= results[4][i].feedback %> : <%= results[4][i].count %></li>
+            <% } %>
+        </ul>
+        <h3>Confidence about their answer</h3>
+        <ul>
+            <% for (var i=0; i<results[5].length; i++){ %>
+            <li><%= results[5][i].confident %> : <%= results[5][i].count %></li>
+            <% } %>
+        </ul>
+    </div>
+
+</body>
+
+</html>

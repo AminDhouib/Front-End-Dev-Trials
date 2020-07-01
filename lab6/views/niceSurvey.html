@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <title>Questionnaire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+
+  <!-- Use Css external file -->
+  <link href="../public/assets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand">Kijiji Questionaire</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/niceSurvey">Survey</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/analysis">Analysis</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-md p-3 my-3 border bg-dark text-white" id="survey">
+    <h2 class="h2Custom"> What do you think of the <a href="https://www.kijiji.ca/"> Kijiji</a> website?</h2>
+		
+		<a href="https://www.kijiji.ca/">
+			<img class="kijijiImg" src="kijiji.PNG" alt="Questionnaire" alt="">
+    </a>    
+    
+    <br>
+    <br>
+
+    <form>
+      <h3>1. Please enter your full name</h3>
+      <input type="text" name="name" required />
+      <br>
+      <br>
+
+      <h3>2. What is your gender?</h3>
+      <input type="radio" name="gender" value="Male"> Male<br>
+      <input type="radio" name="gender" value="Female"> Female<br>
+
+      <br>
+
+      <h3>3. How often do you visit this website?</h3>
+      <select name="frequency">
+        <option value="Every day!" selected="selected">Every day!</option>
+        <option value="Few times a week">Few times a week</option>
+        <option value="About 2-3 times a month">About 2-3 times a month</option>
+        <option value="About once a year">About once a year</option>
+        <option value="I never used it">I never used it</option>
+      </select>
+      <br>
+      <br>
+
+      <br>
+      <h3>4. In the web, page I like:</h3>
+        <input type="checkbox" name="goodTraits" value="the usage of colors."> the usage of colors.<br>
+        <input type="checkbox" name="goodTraits" value="its simplicity."> its simplicity.<br>
+        <input type="checkbox" name="goodTraits" value="its usability."> its usability.<br>
+      <br>
+  
+      <h3>5. Something else you love about it?</h3>
+        <input type="text" name="feedback" required />
+      <br>
+      <br>
+
+      <h3>6. Are you confident about your answers?</h3>
+      <select name="confident">
+        <option value="Yes!" selected="selected">Yes!</option>
+        <option value="Not Really...">Not Really... </option>
+        
+      </select>
+      <br>
+      <br>
+
+      <button type="submit" class="btn btn-success" id="bb">Submit</button>
+      <p id="thanks"></p>
+    </form>
+  </div>
+  <script src="/assets/action.js"></script>
+</body>
+
+</html>
