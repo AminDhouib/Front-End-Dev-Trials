@@ -9,13 +9,9 @@ const Gallery = () => {
 
   const handleOnDragStart = (e) => e.preventDefault()
   return (
-    <AliceCarousel mouseTrackingEnabled>
-      <img src={require('./img/wow4.jpg')} onDragStart={handleOnDragStart} className="card-img-top" height="360px" alt="a"/>
-      <img src={require('./img/wow2.jpg')} onDragStart={handleOnDragStart} className="card-img-top" height="360px" alt="a"/>
-      <img src={require('./img/wow3.jpg')} onDragStart={handleOnDragStart} className="card-img-top" height="360px" alt="a"/>
-      <img src={require('./img/wow5.jpg')} onDragStart={handleOnDragStart} className="card-img-top" height="360px" alt="a"/>
-      <img src={require('./img/wow.jpg')} onDragStart={handleOnDragStart} className="card-img-top" height="360px" alt="a"/>
-    </AliceCarousel>
+    <div className="container">
+      
+    </div>
   )
 }
 
